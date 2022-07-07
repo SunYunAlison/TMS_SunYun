@@ -1,0 +1,14 @@
+<nav class="shadow navbar navbar-expand-lg navbar-theme">
+    <a class="nav-text flex1" type="button" id="dashboard" [ngClass]="pageName == 'dashboard' ? 'OnActive' : 'notActive'">
+        <span class="mx-auto" [routerLink]="['/dashboard']">Dashboard</span>
+    </a>
+    <a class="nav-text flex1" type="button" id="report" [ngClass]="pageName == 'report' ? 'OnActive' : 'notActive'">
+        <span class="mx-auto" [routerLink]="['/report']">Report</span>
+    </a>
+    <a class="nav-text flex1" type="button" id="setting" [ngClass]="pageName == 'setting' ? 'OnActive' : 'notActive'">
+        <span class="mx-auto" [routerLink]="['/setting']">Settings</span>
+    </a>
+    <a class="nav-text flex1" type="button" id="cmc" [ngClass]="pageName == 'cmc' ? 'OnActive' : 'notActive'">
+        <span class="mx-auto" [routerLink]="['/cmc']">CMC</span>
+    </a>
+</nav>

@@ -1,0 +1,193 @@
+<app-header></app-header>
+<app-navbar [pageName]="'cmc'"></app-navbar>
+<div class="page">
+    <mat-tab-group mat-align-tabs="start" color="accent">
+        <mat-tab label="Alarm History">
+
+            <div class="refresh">
+                <button mat-icon-button class="button" type="button" (click)="getMessageData()">
+                    <i class="fa-solid fa-retweet" style="font-size:x-large;"></i>
+                    <span class="text-b">Refresh on</span>
+                </button>
+             
+            </div>
+
+            <div class="example-container mat-elevation-z8 m">
+                <table mat-table class="w-100" [dataSource]="messsageDataSource">
+                    <!-- reportTime Column -->
+                    <ng-container matColumnDef="reportTime">
+                        <th mat-header-cell *matHeaderCellDef> Report Time </th>
+                        <td mat-cell *matCellDef="let element"> {{element.ReportTime}} </td>
+                    </ng-container>
+                    <!-- messageCode Column -->
+                    <ng-container matColumnDef="messageCode">
+                        <th mat-header-cell *matHeaderCellDef> Message Code </th>
+                        <td mat-cell *matCellDef="let element"> {{element.MessageCode}} </td>
+                    </ng-container>
+                    <!-- messageBody Column -->
+                    <ng-container matColumnDef="messageBody">
+                        <th mat-header-cell *matHeaderCellDef> Message Body </th>
+                        <td mat-cell *matCellDef="let element"> {{element.MessageBody}} </td>
+                    </ng-container>
+                    <!-- chatId Column -->
+                    <ng-container matColumnDef="chatId">
+                        <th mat-header-cell *matHeaderCellDef> Chat Id </th>
+                        <td mat-cell *matCellDef="let element"> {{element.ChatId}} </td>
+                    </ng-container>
+                    <!-- chatGroup Column -->
+                    <ng-container matColumnDef="chatGroup">
+                        <th mat-header-cell *matHeaderCellDef> Chat Group </th>
+                        <td mat-cell *matCellDef="let element"> {{element.ChatGroup}} </td>
+                    </ng-container>
+                    <!-- lmUser Column -->
+                    <ng-container matColumnDef="lmUser">
+                        <th mat-header-cell *matHeaderCellDef> User </th>
+                        <td mat-cell *matCellDef="let element"> {{element.LmUser}} </td>
+                    </ng-container>
+                    <!-- lmTime Column -->
+                    <ng-container matColumnDef="lmTime">
+                        <th mat-header-cell *matHeaderCellDef> Lm Time </th>
+                        <td mat-cell *matCellDef="let element"> {{element.LmTime}} </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <mat-paginator #paginator [pageSizeOptions]="[10, 20, 30, 40, 50, 5,]" showFirstLastButtons
+                    aria-label="Select page of periodic elements">
+                </mat-paginator>
+            </div>
+        </mat-tab>
+
+        <mat-tab label="User Infomation">
+
+            <div class="row" style="margin-left: 0px; margin-right: 0px;">
+                <div class="col-md-6 col-sm-5" style="display: flex; align-items: center;">
+                    <div class="row text-b" style="flex: 1;">
+                        <div class="col-md-3 col-sm-6">
+                            <button mat-icon-button class="mr-2" type="button" (click)="newAccount()">
+                                <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
+                                <span class="text-b">Add</span>
+                            </button>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <button mat-icon-button class="mr-2" type="button" (click)="updateAccount()">
+                                <i class="fa fa-edit fa-2x" aria-hidden="true"></i>
+                                <span class="text-b">Update</span>
+                            </button>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <button mat-icon-button class="mr-2" type="button" (click)="deleteAccount()">
+                                <i class="fa fa-trash-alt fa-2x" aria-hidden="true"></i>
+                                <span class="text-b">Delete</span>
+                            </button>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <button mat-icon-button class="mr-2" type="button" (click)="getAllUser()">
+                                <i class="fa-solid fa-retweet fa-2x" aria-hidden="true"></i>
+                                <span class="text-b">Refresh</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-7">
+                    <div  style="text-align: right;">
+                        <mat-form-field appearance="outline" style="width: 50%;">
+                            <mat-label>Keywords</mat-label>
+                            <input matInput autocomplete="off" [(ngModel)]="keyword">
+                            <button matSuffix mat-icon-button aria-label="Clear" (click)="getAllUser()">
+                                <mat-icon>close</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    
+                    <button mat-raised-button class="m-1" style="vertical-align: super;" type="button" color="primary"
+                        (click)="filterData()">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        Search
+                    </button>
+                </div>
+                </div>
+            </div>
+            <div class="row" style="margin-left: 0px; margin-right: 0px;" *ngIf="clickDelete" style="display:flex">
+                <p *ngIf="successMsg!=''" class="successMsg">{{successMsg}}</p>
+                <p *ngIf="errorMsg!=''" class="errorMsg">{{errorMsg}}</p>
+            </div>
+            <div class="row" *ngIf="clickAdd || clickUpdate" style="display:flex">
+                <div class="col-md-2">
+                    <mat-form-field appearance="outline" class="m-1 w-100">
+                        <mat-label class="text-n">User Name</mat-label>
+                        <input matInput required [formControl]="userName" autocomplete="off">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-2">
+                    <mat-form-field appearance="outline" class="m-1 w-100">
+                        <mat-label class="text-n">Telegram ID</mat-label>
+                        <input matInput [formControl]="userId" autocomplete="off">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-2">
+                    <mat-form-field appearance="outline" class="m-1 w-100">
+                        <mat-label class="text-n">Email</mat-label>
+                        <input matInput #emailAdress [formControl]="email" autocomplete="off">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-2">
+                    <mat-form-field appearance="outline" class="m-1 w-100">
+                        <mat-label class="text-n">Contact No.</mat-label>
+                        <input matInput [formControl]="contactNo" autocomplete="off">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-2">
+                    <button mat-raised-button class="btn" type="button" color="accent" (click)="submitUser()"
+                        [disabled]="userName.value.length == 0">
+                        Submit</button>
+                    <button mat-raised-button class="btn" type="button" (click)="clearInput()">
+                        Cancel</button>
+                </div>
+                <!-- <div class="col-md-2" *ngIf="result" style="overflow:hidden; display: flex; align-items: center;">
+                    <p *ngIf="successMsg!=''" class="successMsg">{{successMsg}}</p>
+                    <p *ngIf="errorMsg!=''" class="errorMsg">{{errorMsg}}</p>
+                </div> -->
+            </div>
+            <div class="example-container mat-elevation-z8 m">
+                <table mat-table class="w-100" [dataSource]="userDataSource">
+                    <!-- select Column -->
+                    <ng-container matColumnDef="select">
+                        <th mat-header-cell *matHeaderCellDef>
+                        </th>
+                        <td mat-cell *matCellDef="let row">
+                            <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+                                [checked]="selection.isSelected(row)">
+                            </mat-checkbox>
+                        </td>
+                    </ng-container>
+                    <!-- userName Column -->
+                    <ng-container matColumnDef="userName">
+                        <th mat-header-cell *matHeaderCellDef> User Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.UserName}} </td>
+                    </ng-container>
+                    <!-- userId Column -->
+                    <ng-container matColumnDef="userId">
+                        <th mat-header-cell *matHeaderCellDef> Telegram ID </th>
+                        <td mat-cell *matCellDef="let element"> {{element.UserId}} </td>
+                    </ng-container>
+                    <!-- email Column -->
+                    <ng-container matColumnDef="email">
+                        <th mat-header-cell *matHeaderCellDef> Email </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
+                    </ng-container>
+                    <!-- contactNo Column -->
+                    <ng-container matColumnDef="contactNo">
+                        <th mat-header-cell *matHeaderCellDef> Contact No. </th>
+                        <td mat-cell *matCellDef="let element"> {{element.ContactNo}} </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="userColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: userColumns;"></tr>
+                </table>
+                <mat-paginator #paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                    aria-label="Select page of periodic elements">
+                </mat-paginator>
+            </div>
+
+        </mat-tab>
+    </mat-tab-group>
+</div>

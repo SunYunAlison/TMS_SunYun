@@ -1,0 +1,63 @@
+<ng-container>
+    <div class="box-wrapper">
+        <div class="box" [@flipState]="flip">
+            <div class="box-side box-front">
+                <div class="freezerId p-2">Freezer: DM-FREZ-H01
+                    <button mat-raised-button class="btn-right" (click)="toggleFlip()">
+                        <i class="bi bi-sliders"></i>
+                    </button>
+                </div>
+                <div class="sensorGroup">
+                    <div class="d-flex">
+                        <div class="temp temp-color-black col-lg-5 col-md-5">
+                            <div><span>{{boxData.Temperature}}</span>°C</div>
+                            <i class="fa-solid fa-temperature-half icon"></i>
+                        </div>
+                        <div class="col-lg-7 col-md-7">
+                            <div style="padding-right: 5px;">
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HIHI</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HI</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LO</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LOLO</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="freezerStatus">Satus: <span>UP PRODUCT</span></div>
+                </div>
+
+            </div>
+            <div class="box-side box-back">
+                <div class="align-right">
+                    <button mat-raised-button color="white" class="btn">
+                        <i class="bi bi-pencil-square "></i>
+                    </button>
+                    <button mat-raised-button color="primary" class="btn" (click)="toggleFlip()">
+                        <i class="bi bi-check-square-fill "></i>
+                    </button>
+                </div>
+                <span>spec:</span><input type="text" placeholder="texttext">
+            </div>
+        </div>
+    </div>
+</ng-container>

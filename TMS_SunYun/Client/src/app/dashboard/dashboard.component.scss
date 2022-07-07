@@ -1,0 +1,84 @@
+.box-group{
+    display: inline-block;
+    margin: 10px !important;
+}
+
+.layoutRow {
+    margin: 0.4rem auto;
+    width: 100%;
+    height: 26vh;
+    min-height: 100px;
+    // background-color: #d3e0f7;
+    border-radius: 0.5rem;
+}
+
+.sensorGroup {
+    // height: 100%;
+    // line-height: 40px;
+    width: 260px;
+    font-weight: 700;
+    font-size: medium;
+    margin-left: 10px;
+    margin-right: 10px;
+    // text-align: center;
+}
+
+.temp {
+    margin: 0.25rem 0 0.25rem 0;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.sensorGroup .fa-solid {
+    display: block;
+    font-size: 6rem;
+}
+
+.sensorGroup li {
+    list-style: none;
+}
+
+.sensorGroup .inline {
+    display: inline;
+}
+
+.mat-form-field {
+    display: block;
+    height: 33px;
+    line-height: 18px;
+    font-size: 14px;
+}
+
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.25em 0px !important;}
+::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1em) scale(0.7);
+}
+
+.freezerId {
+    margin-top: 0.25rem;
+    background-color: #996699;
+    color: white;
+    border-radius: 0.25rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.freezerId2 {
+    margin-top: 0.25rem;
+    background-color: #6699CC;
+    color: white;
+    border-radius: 0.25rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.freezerStatus {
+    border-radius: 0.25rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.freezerStatus span {
+    color: green;
+}

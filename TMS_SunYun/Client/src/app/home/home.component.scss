@@ -1,0 +1,39 @@
+body {
+    height: calc(100vh - 66px);
+}
+.margin-auto
+{
+    margin:auto;
+}
+
+.pd-100 {
+    padding:100px;
+}
+
+.pd-b-20 {
+    padding-bottom: 20px;
+}
+
+
+.icon {  
+    color: #014a6f;
+    font-size: 100px;
+}
+
+img {
+    height: 150px;
+}
+
+.icon-text {
+    color: #014a6f;
+    font-size: large;
+    font-weight: 500;
+}
+
+.mat-card {
+    border: 1px solid #014a6f !important;
+    border-radius: 5px !important;
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+

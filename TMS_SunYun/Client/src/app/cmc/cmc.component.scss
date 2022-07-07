@@ -1,0 +1,180 @@
+.page {
+    width: 100%;
+    padding: 10px;
+    padding-top: 20px !important;
+}
+
+::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+    color: #f5f5f5;
+    font-size: medium;
+    background-color: #014a6f;
+}
+
+::ng-deep  .mat-tab-label {
+    color: #014a6f;
+    font-size: medium;
+    
+}
+
+::ng-deep .mat-ink-bar {
+    background-color: var(--primary-color, #1F89CE) !important;
+}
+
+.html,body {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: #263238;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.bg-main {
+  
+    background-color: #f5f5f5 !important;
+}
+
+.m {
+    margin: 1rem !important;
+}
+
+.p-1 {
+    padding:1rem !important;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.text-b {
+    font-size: 1.1rem !important;
+    font-weight: 700;
+    color: #263238;
+    padding-left: 2px;  
+}
+
+.btn{
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.refresh{
+    padding-left: 10px;
+}
+
+.button{
+    border:none;
+    background-color: transparent;
+    margin-right: 8px;
+    margin-top: 8px;
+}
+
+.example-container {
+    width: auto;
+    overflow: auto;
+    padding-top: 10px;
+    margin: 0px !important;
+}
+
+.mat-column-reportTime {
+    text-align: center;
+    width: 10%;
+    padding: .3rem !important;
+}
+
+.mat-column-messageCode {
+    text-align: center;
+    width: 10%;
+    padding: .3rem !important;
+}
+
+.mat-column-messageBody {
+    text-align: center;
+    width: 30%;
+    padding: .3rem !important;
+}
+
+.mat-column-chatId {
+    text-align: center;
+    width: 25%;
+    padding: .3rem !important;
+}
+
+.mat-column-chatGroup {
+    text-align: center;
+    width: 10%;
+    padding: .3rem !important;
+}
+
+.mat-column-lmUser {
+    text-align: center;
+    width: 5%;
+    padding: .3rem !important;
+}
+
+.mat-column-lmTime {
+    text-align: center;
+    width: 10%;
+    padding: .3rem !important;
+}
+
+.mat-header-cell{
+    font-size:large !important;
+    font-weight:bold;
+    color: #014a6f;
+}
+
+.mat-cell{
+    font-size: .8rem !important;
+}
+
+.mat-column-select {
+    text-align: center;
+    width: 3%;
+
+}
+
+.mat-column-userName {
+    text-align: center;
+    width: 25%;
+    padding: .3rem !important;
+}
+
+.mat-column-userId {
+    text-align: center;
+    width: 25%;
+    padding: .3rem !important;
+}
+
+.mat-column-email {
+    text-align: center;
+    width: 25%;
+    padding: .3rem !important;
+}
+
+.mat-column-contactNo {
+    text-align: center;
+    width: 25%;
+    padding: .3rem !important;
+}
+
+
+
+
+@media(max-width:768px) {
+    .m {
+        margin: 0 !important;
+    }
+
+    .example-container {
+        width: auto;
+        overflow: auto;
+    }
+}

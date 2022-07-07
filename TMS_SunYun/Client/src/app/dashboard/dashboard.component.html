@@ -1,0 +1,427 @@
+<app-header></app-header>
+<app-navbar [pageName]="'dashboard'"></app-navbar>
+<app-setting class="box-group" *ngFor="let element of freezerSpec" ></app-setting>
+
+<!-- <p>dashboard works!</p> -->
+<!-- <div style="margin-top: 10px;" class="container-fluid">
+    <div class="row">
+        <div class="asrs col-md-12 d-flex flex-column justify-content-around align-items-center"> -->
+
+            <!-- row 1 -->
+            <!-- <div class="layoutRow d-flex flex-row justify-content-around align-items-center">
+                <div class="sensorGroup">
+                    <div class="d-flex">
+                        <div class="temp col-md-5">
+                            <span>-45</span>°C
+                            <i class="fa-solid fa-temperature-half"></i>
+                        </div>
+                        <div class="col-md-7">
+                            <div>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HIHI</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HI</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LO</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LOLO</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="freezerId">Freezer: DM-FREZ-H01</div>
+                    <div class="freezerStatus">Satus: <span>UP PRODUCT</span></div>
+                </div>
+                <div class="sensorGroup">
+                    <div class="d-flex">
+                        <div class="temp col-md-5">
+                            <span>-45</span>°C
+                            <i class="fa-solid fa-temperature-half"></i>
+                        </div>
+                        <div class="col-md-7">
+                            <div>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HIHI</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HI</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LO</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LOLO</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="freezerId">Freezer: DM-FREZ-H01</div>
+                    <div class="freezerStatus">Satus: <span>UP PRODUCT</span></div>
+                </div>
+                <div class="sensorGroup">
+                    <div class="d-flex">
+                        <div class="temp col-md-5">
+                            <span>-45</span>°C
+                            <i class="fa-solid fa-temperature-half"></i>
+                        </div>
+                        <div class="col-md-7">
+                            <div>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HIHI</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HI</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LO</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LOLO</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="freezerId">Freezer: DM-FREZ-H01</div>
+                    <div class="freezerStatus">Satus: <span>UP PRODUCT</span></div>
+                </div>
+                <div class="sensorGroup">
+                    <div class="d-flex">
+                        <div class="temp col-md-5">
+                            <span>-45</span>°C
+                            <i class="fa-solid fa-temperature-half"></i>
+                        </div>
+                        <div class="col-md-7">
+                            <div>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HIHI</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HI</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LO</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LOLO</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="freezerId">Freezer: DM-FREZ-H01</div>
+                    <div class="freezerStatus">Satus: <span>UP PRODUCT</span></div>
+                </div>
+            </div> -->
+
+            <!-- row 2 -->
+            <!-- <div class="layoutRow d-flex flex-row justify-content-around align-items-center">
+                <div class="sensorGroup">
+                    <div class="d-flex">
+                        <div class="temp col-md-5">
+                            <span>-45</span>°C
+                            <i class="fa-solid fa-temperature-half"></i>
+                        </div>
+                        <div class="col-md-7">
+                            <div>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HIHI</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HI</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LO</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LOLO</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="freezerId">Freezer: DM-FREZ-H01</div>
+                    <div class="freezerStatus">Satus: <span>UP PRODUCT</span></div>
+                </div>
+                <div class="sensorGroup">
+                    <div class="d-flex">
+                        <div class="temp col-md-5">
+                            <span>-45</span>°C
+                            <i class="fa-solid fa-temperature-half"></i>
+                        </div>
+                        <div class="col-md-7">
+                            <div>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HIHI</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HI</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LO</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LOLO</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="freezerId">Freezer: DM-FREZ-H01</div>
+                    <div class="freezerStatus">Satus: <span>UP PRODUCT</span></div>
+                </div>
+                <div class="sensorGroup">
+                    <div class="d-flex">
+                        <div class="temp col-md-5">
+                            <span>-45</span>°C
+                            <i class="fa-solid fa-temperature-half"></i>
+                        </div>
+                        <div class="col-md-7">
+                            <div>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HIHI</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HI</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LO</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LOLO</mat-label>
+                                    <span matPrefix>&nbsp;&nbsp;</span>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="freezerId">Freezer: DM-FREZ-H01</div>
+                    <div class="freezerStatus">Satus: <span>UP PRODUCT</span></div>
+                </div>
+                <div class="sensorGroup ">
+                    <div class="d-flex">
+                        <div class="temp col-md-5">
+                            <span>5</span>°C
+                            <i class="fa-solid fa-temperature-half"></i>
+                        </div>
+                        <div class="col-md-7">
+                            <div>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HIHI</mat-label>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HI</mat-label>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LO</mat-label>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LOLO</mat-label>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="freezerId2">Freezer: DM-FREZ-H01</div>
+                    <div class="freezerStatus">Satus: <span>UP PRODUCT</span></div>
+                </div>
+            </div> -->
+
+            <!-- row 3 -->
+            <!-- <div class="layoutRow d-flex flex-row justify-content-around align-items-center">
+                <div class="sensorGroup ">
+                    <div class="d-flex">
+                        <div class="temp col-md-5">
+                            <span>5</span>°C
+                            <i class="fa-solid fa-temperature-half"></i>
+                        </div>
+                        <div class="col-md-7">
+                            <div>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HIHI</mat-label>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HI</mat-label>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LO</mat-label>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LOLO</mat-label>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="freezerId2">Freezer: DM-FREZ-H01</div>
+                    <div class="freezerStatus">Satus: <span>UP PRODUCT</span></div>
+                </div>
+                <div class="sensorGroup ">
+                    <div class="d-flex">
+                        <div class="temp col-md-5">
+                            <span>5</span>°C
+                            <i class="fa-solid fa-temperature-half"></i>
+                        </div>
+                        <div class="col-md-7">
+                            <div>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HIHI</mat-label>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HI</mat-label>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LO</mat-label>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LOLO</mat-label>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="freezerId2">Freezer: DM-FREZ-H01</div>
+                    <div class="freezerStatus">Satus: <span>UP PRODUCT</span></div>
+                </div>
+                <div class="sensorGroup ">
+                    <div class="d-flex">
+                        <div class="temp col-md-5">
+                            <span>5</span>°C
+                            <i class="fa-solid fa-temperature-half"></i>
+                        </div>
+                        <div class="col-md-7">
+                            <div>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HIHI</mat-label>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>HI</mat-label>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LO</mat-label>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                                <mat-form-field class="mats-form-field" appearance="outline">
+                                    <mat-label>LOLO</mat-label>
+                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <span matSuffix>°C</span>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="freezerId2">Freezer: DM-FREZ-H01</div>
+                    <div class="freezerStatus">Satus: <span>UP PRODUCT</span></div>
+                </div>
+                <div class="sensorGroup ">
+                    <div class="freezerId2" style="width: 260px; background-color: #014a6f;">Save</div>
+                </div>
+            </div> -->
+        <!-- </div>
+    </div> -->

@@ -1,0 +1,125 @@
+.box-wrapper {
+    perspective: 800px;
+}
+
+.box {
+    position: relative;
+    width:300px;
+    height:240px;
+    margin: auto auto;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transform-style: preserve-3d;
+    transform: transform 1s;
+}
+
+.box-side {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    color: #f5f5f5;
+    text-align: center;
+    user-select: none;
+}
+
+.box-front {
+    background-color: #f5f5f5;
+    transform: rotateY(0deg);
+}
+
+.box-back {
+    background-color: #014a6f;
+    transform: rotateY(-180deg);
+}
+
+.btn-right {
+    text-align: right;
+    border: none;
+    float: right;
+    background-color: rgba(255, 255, 255, 0);
+  
+}
+
+.icon {  
+    font-size: 100px;  
+}
+
+
+
+.sensorGroup {
+    // height: 100%;
+    // line-height: 40px;
+    width: 100%;
+    font-weight: 700;
+    font-size: medium;
+    color: #014a6f;
+
+    // text-align: center;
+}
+
+.temp {
+    margin: 0.25rem 0 0.25rem 0;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.temp-color-black {
+    color: black;
+}
+
+.sensorGroup .fa-solid {
+    display: block;
+    font-size: 6rem;
+}
+
+.sensorGroup li {
+    list-style: none;
+}
+
+.sensorGroup .inline {
+    display: inline;
+}
+
+.mat-form-field {
+    display: block;
+    height: 33px;
+    line-height: 18px;
+    font-size: 14px;
+}
+
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.25em 0px !important;}
+::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1em) scale(0.7);
+}
+
+.freezerId {
+    // margin-top: 0.25rem;
+    background-color: #996699;
+    color: white;
+    border-radius: 5px 5px 0px 0px;
+    text-align: center;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.freezerId2 {
+    margin-top: 0.25rem;
+    background-color: #6699CC;
+    color: white;
+    border-radius: 0.25rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.freezerStatus {
+    border-radius: 0.25rem;
+    text-align: center;
+    font-size: large;
+}
+
+.freezerStatus span {
+    color: green;
+}

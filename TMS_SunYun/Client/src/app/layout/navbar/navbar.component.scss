@@ -1,0 +1,48 @@
+a {
+    text-decoration: none;
+}
+
+.navbar-theme {
+    background-color: #ffffff!important;
+}
+
+.navbar {
+    min-height: 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.shadow {
+    box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.2);
+}
+
+.mx-auto {
+    margin: auto !important;
+}
+
+.mx-r {
+    margin-right: 0px !important;
+}
+
+.nav-text {
+    cursor: pointer !important;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #014a6f;
+    font-size: large;
+}
+
+.flex1 {
+    flex:1;
+}
+
+.OnActive {
+    color: #014a6f;
+    font-weight: 500;
+}
+
+.notActive {
+    color: #a0a0a0;
+}

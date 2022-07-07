@@ -1,0 +1,77 @@
+<app-header></app-header>
+<app-navbar [pageName]="'report'"></app-navbar>
+
+
+<div class="page">
+    <div class="row m-l-r-10">
+        <div class="col-lg-2 col-md-6">
+            <mat-form-field appearance="outline" class="w-80">
+                <mat-label>Select an option</mat-label>
+                <mat-select [(value)]="selectedFreezer">
+                    <mat-option *ngFor="let freezer of freezerNameList" [value]="freezer">{{freezer}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <mat-form-field appearance="outline" class="w-80">
+                <mat-label>Select a date range</mat-label>
+                <mat-date-range-input [formGroup]="dateRange" [rangePicker]="rangePicker">
+                    <input matStartDate formControlName="start" placeholder="Start date">
+                    <input matEndDate formControlName="end" placeholder="End date">
+                </mat-date-range-input>
+                <mat-datepicker-toggle matSuffix [for]="rangePicker"></mat-datepicker-toggle>
+                <mat-date-range-picker #rangePicker>
+                    <mat-date-range-picker-actions>
+                        <button mat-button matDateRangePickerCancel>Cancel</button>
+                        <button mat-raised-button color="primary" matDateRangePickerApply
+                            (click)="updateDateRange()">Apply</button>
+                    </mat-date-range-picker-actions>
+                </mat-date-range-picker>
+            </mat-form-field>
+        </div>
+        <div class="col-lg-2 col-md-6">
+            <mat-form-field appearance="outline" class="w-80">
+                <mat-label>Select a data type</mat-label>
+                <mat-select [(value)]="selectedDataType">
+                    <mat-option *ngFor="let type of dataTypeList" [value]="type">{{type}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-lg-2 col-md-6">
+            <mat-form-field appearance="outline" class="w-80">
+                <mat-label>Select start hour</mat-label>
+                <mat-select [(value)]="selectedStartHour">
+                    <mat-option *ngFor="let hour of hours" [value]="hour">{{hour}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-lg-2 col-md-6">
+            <mat-form-field appearance="outline" class="w-80">
+                <mat-label>Select end hour</mat-label>
+                <mat-select [(value)]="selectedEndHour">
+                    <mat-option *ngFor="let hour of hours" [value]="hour">{{hour}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-lg-1 col-md-6">
+            <button mat-raised-button color="primary" class="btn" (click)="onClickSubmit()">Submit</button>
+        </div>
+    </div>
+    <div class="row m-l-r-10">
+        <!-- <div class="col-lg-2"></div> -->
+        <div class="col-lg-8 col-md-6" class="chartTitle" >
+            <span >{{chartTitle}}</span>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+            <button mat-raised-button color="primary" class="btn" (click)="onClickExportCSV()">
+                Download
+                <i class="bi bi-filetype-csv icon pd-l-5"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="chart-area ">
+        <div id="hourPlotChart"></div>
+    </div>
+</div>

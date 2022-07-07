@@ -1,0 +1,17 @@
+<header>
+    <nav class="px-4 py-2 shadow navbar navbar-expand-lg header-theme">
+        <a class="navbar-brand" [routerLink]="['/home']">
+            <img src="assets/images/AUODigitech.png" height="40px" style="padding-left: 20px;text-align: center;">
+        </a>
+        <a [routerLink]="['/home']" class="navbar-brand header-title text-theme mx-auto" style="margin:auto">
+            <span class="text-header">{{title}}</span>
+        </a>
+        <span class="text-theme text-large mx-r pd-r" [routerLink]="['/settings']" aria-haspopup="true"
+            aria-expanded="false">
+            {{today | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+        <a  class="text-theme text-large" (click)="onScreenChange()">
+            <i *ngIf="isFullScreen == false" class="bi bi-arrows-fullscreen" ></i>
+            <i *ngIf="isFullScreen == true" class="bi bi-fullscreen-exit"></i>
+        </a>
+    </nav>
+</header>

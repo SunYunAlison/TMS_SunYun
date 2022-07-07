@@ -1,0 +1,10 @@
+<div class="header" [ngClass]="{'bgred' : isError,'bggreen': !isError}">
+    <h5>{{title}}</h5>
+  </div>
+  <div class="content">
+    <p>{{message}}</p>
+  </div>
+  <hr>
+  <div class="footer">
+    <button mat-button matDialogClose="cancel" class="cbutton">Close</button>
+  </div>
