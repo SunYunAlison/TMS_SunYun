@@ -6,9 +6,12 @@
         <span class="mx-auto" [routerLink]="['/report']">Report</span>
     </a>
     <a class="nav-text flex1" type="button" id="setting" [ngClass]="pageName == 'setting' ? 'OnActive' : 'notActive'">
-        <span class="mx-auto" [routerLink]="['/setting']">Settings</span>
+        <span class="mx-auto" [routerLink]="['/setting']">Status Settings</span>
     </a>
     <a class="nav-text flex1" type="button" id="cmc" [ngClass]="pageName == 'cmc' ? 'OnActive' : 'notActive'">
         <span class="mx-auto" [routerLink]="['/cmc']">CMC</span>
+    </a>
+    <a class="nav-text flex1" type="button" id="alarm" [ngClass]="pageName == 'alarm' ? 'OnActive' : 'notActive'">
+        <span class="mx-auto" [routerLink]="['/alarm']">Alarm Comment</span>
     </a>
 </nav>

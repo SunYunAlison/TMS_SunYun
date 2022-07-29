@@ -1,0 +1,79 @@
+.table-title {
+    padding: 20px;
+    font-size: larger;
+    font-weight: bold;
+    color: #014a6f;
+}
+
+.example-container {
+    width: auto;
+    overflow: auto;
+    padding-top: 10px;
+    margin: 0px !important;
+}
+
+.m {
+    margin: 1rem !important;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.mat-header-cell{
+    font-size:large !important;
+    font-weight:bold;
+    color: #014a6f;
+}
+
+.mat-cell{
+    font-size: .8rem !important;
+}
+
+.mat-column-EventId {
+    text-align: center;
+    width: 15%;
+    padding: .3rem !important;
+}
+
+.mat-column-Freezer {
+    text-align: center;
+    width: 10%;
+    padding: .3rem !important;
+}
+
+.mat-column-Status {
+    text-align: center;
+    width: 15%;
+    padding: .3rem !important;
+}
+
+.mat-column-AlarmTime {
+    text-align: center;
+    width: 15%;
+    padding: .3rem !important;
+}
+
+.mat-column-Temperature {
+    text-align: center;
+    width: 15%;
+    padding: .3rem !important;
+}
+
+.mat-column-Action {
+    text-align: center;
+    width: 10%;
+    padding: .3rem !important;
+}
+
+
+@media(max-width:768px) {
+    .m {
+        margin: 0 !important;
+    }
+
+    .example-container {
+        width: auto;
+        overflow: auto;
+    }
+}

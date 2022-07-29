@@ -1,0 +1,52 @@
+<app-header></app-header>
+<app-navbar [pageName]="'alarm'"></app-navbar>
+<div class="table-title">
+    <p>Freezer Alarm Report</p>
+</div>
+<div class="table">
+    <div class="example-container mat-elevation-z8 m">
+        <table mat-table class="w-100" [dataSource]="alarmDataSource">
+            <!-- EventId Column -->
+            <ng-container matColumnDef="EventId">
+                <th mat-header-cell *matHeaderCellDef> Event ID </th>
+                <td mat-cell *matCellDef="let element"> {{element.ID}} </td>
+            </ng-container>
+            <!-- Freezer Column -->
+            <ng-container matColumnDef="Freezer">
+                <th mat-header-cell *matHeaderCellDef> Freezer </th>
+                <td mat-cell *matCellDef="let element"> {{element.EQP_NAME}} </td>
+            </ng-container>
+            <!-- Status Column -->
+            <ng-container matColumnDef="Status">
+                <th mat-header-cell *matHeaderCellDef> Status </th>
+                <td mat-cell *matCellDef="let element"> {{element.ALARM_STATUS}} </td>
+            </ng-container>
+            <!-- Temperature Column -->
+            <ng-container matColumnDef="Temperature">
+                <th mat-header-cell *matHeaderCellDef> Temperature </th>
+                <td mat-cell *matCellDef="let element"> {{element.ALARM_VALUE}} </td>
+            </ng-container>
+            <!-- AlarmTime Column -->
+            <ng-container matColumnDef="AlarmTime">
+                <th mat-header-cell *matHeaderCellDef> Alarm Time </th>
+                <td mat-cell *matCellDef="let element"> {{element.ALARM_TIME}} </td>
+            </ng-container>
+            <!-- Action Column -->
+            <ng-container matColumnDef="Action">
+                <th mat-header-cell *matHeaderCellDef> Comment </th>
+                <td mat-cell *matCellDef="let row">
+                    <button mat-raised-button type="button" color="primary" (click)="popComment(row)">
+                        <i class="fa-solid fa-message-pen" aria-hidden="true"></i>
+                        Action
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator #paginator [pageSizeOptions]="[10, 20, 30, 5]" showFirstLastButtons
+            aria-label="Select page of periodic elements">
+        </mat-paginator>
+    </div>
+</div>

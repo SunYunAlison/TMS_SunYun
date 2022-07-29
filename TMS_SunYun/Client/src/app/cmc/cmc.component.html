@@ -9,7 +9,7 @@
                     <i class="fa-solid fa-retweet" style="font-size:x-large;"></i>
                     <span class="text-b">Refresh on</span>
                 </button>
-             
+
             </div>
 
             <div class="example-container mat-elevation-z8 m">
@@ -52,8 +52,8 @@
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
-                <mat-paginator #paginator [pageSizeOptions]="[10, 20, 30, 40, 50, 5,]" showFirstLastButtons
-                    aria-label="Select page of periodic elements">
+                <mat-paginator  [pageSizeOptions]="[10, 15, 20]"
+                    showFirstLastButtons aria-label="Select page of periodic elements">
                 </mat-paginator>
             </div>
         </mat-tab>
@@ -90,7 +90,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-7">
-                    <div  style="text-align: right;">
+                    <div style="text-align: right;">
                         <mat-form-field appearance="outline" style="width: 50%;">
                             <mat-label>Keywords</mat-label>
                             <input matInput autocomplete="off" [(ngModel)]="keyword">
@@ -98,13 +98,13 @@
                                 <mat-icon>close</mat-icon>
                             </button>
                         </mat-form-field>
-                    
-                    <button mat-raised-button class="m-1" style="vertical-align: super;" type="button" color="primary"
-                        (click)="filterData()">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                        Search
-                    </button>
-                </div>
+
+                        <button mat-raised-button class="m-1" style="vertical-align: super;" type="button"
+                            color="primary" (click)="filterData()">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            Search
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="row" style="margin-left: 0px; margin-right: 0px;" *ngIf="clickDelete" style="display:flex">
@@ -136,17 +136,14 @@
                         <input matInput [formControl]="contactNo" autocomplete="off">
                     </mat-form-field>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <button mat-raised-button class="btn" type="button" color="accent" (click)="submitUser()"
                         [disabled]="userName.value.length == 0">
                         Submit</button>
                     <button mat-raised-button class="btn" type="button" (click)="clearInput()">
                         Cancel</button>
                 </div>
-                <!-- <div class="col-md-2" *ngIf="result" style="overflow:hidden; display: flex; align-items: center;">
-                    <p *ngIf="successMsg!=''" class="successMsg">{{successMsg}}</p>
-                    <p *ngIf="errorMsg!=''" class="errorMsg">{{errorMsg}}</p>
-                </div> -->
+
             </div>
             <div class="example-container mat-elevation-z8 m">
                 <table mat-table class="w-100" [dataSource]="userDataSource">
@@ -155,8 +152,8 @@
                         <th mat-header-cell *matHeaderCellDef>
                         </th>
                         <td mat-cell *matCellDef="let row">
-                            <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
-                                [checked]="selection.isSelected(row)">
+                            <mat-checkbox (click)="$event.stopPropagation()"
+                                (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
                             </mat-checkbox>
                         </td>
                     </ng-container>
@@ -183,8 +180,8 @@
                     <tr mat-header-row *matHeaderRowDef="userColumns"></tr>
                     <tr mat-row *matRowDef="let row; columns: userColumns;"></tr>
                 </table>
-                <mat-paginator #paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
-                    aria-label="Select page of periodic elements">
+                <mat-paginator  [pageSizeOptions]="[10, 15, 20]"
+                    showFirstLastButtons aria-label="Select page of periodic elements">
                 </mat-paginator>
             </div>
 

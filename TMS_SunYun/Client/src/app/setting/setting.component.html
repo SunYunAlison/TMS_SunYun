@@ -2,11 +2,21 @@
     <div class="box-wrapper">
         <div class="box" [@flipState]="flip">
             <div class="box-side box-front">
-                <div class="freezerId p-2">Freezer: DM-FREZ-H01
-                    <button mat-raised-button class="btn-right" (click)="toggleFlip()">
-                        <i class="bi bi-sliders"></i>
-                    </button>
+                <div class="d-flex mb-3 freezerId">
+                    <div class="me-auto p-2">{{boxData.Freezer}} </div>
+                    <div class="p-2">
+                        <button mat-raised-button class="btn-right" (click)="editable=!editable">
+                            <i *ngIf="editable === true" class="bi bi-pencil-square"></i>
+                            <i *ngIf="editable === false" class="bi bi-check-square-fill" (click)="boxFrontSubmit(boxData.Freezer)"></i>
+                        </button>
+                    </div>
+                    <div class="p-2">
+                        <button mat-raised-button class="btn-right" (click)="toggleFlip()">
+                            <i class="bi bi-sliders"></i>
+                        </button>
+                    </div>
                 </div>
+
                 <div class="sensorGroup">
                     <div class="d-flex">
                         <div class="temp temp-color-black col-lg-5 col-md-5">
@@ -18,25 +28,25 @@
                                 <mat-form-field class="mats-form-field" appearance="outline">
                                     <mat-label>HIHI</mat-label>
                                     <span matPrefix>&nbsp;&nbsp;</span>
-                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <input matInput autocomplete="off" [disabled]="editable">
                                     <span matSuffix>°C</span>
                                 </mat-form-field>
                                 <mat-form-field class="mats-form-field" appearance="outline">
                                     <mat-label>HI</mat-label>
                                     <span matPrefix>&nbsp;&nbsp;</span>
-                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <input matInput autocomplete="off" [disabled]="editable">
                                     <span matSuffix>°C</span>
                                 </mat-form-field>
                                 <mat-form-field class="mats-form-field" appearance="outline">
                                     <mat-label>LO</mat-label>
                                     <span matPrefix>&nbsp;&nbsp;</span>
-                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <input matInput autocomplete="off" [disabled]="editable">
                                     <span matSuffix>°C</span>
                                 </mat-form-field>
                                 <mat-form-field class="mats-form-field" appearance="outline">
                                     <mat-label>LOLO</mat-label>
                                     <span matPrefix>&nbsp;&nbsp;</span>
-                                    <input matInput autocomplete="off" [disabled]="false">
+                                    <input matInput autocomplete="off" [disabled]="editable">
                                     <span matSuffix>°C</span>
                                 </mat-form-field>
                             </div>
@@ -48,15 +58,20 @@
 
             </div>
             <div class="box-side box-back">
-                <div class="align-right">
-                    <button mat-raised-button color="white" class="btn">
+                <div class="d-flex justify-content-end">
+                    <button mat-raised-button color="white" class="btn" (click)="editableBack = !editableBack">
                         <i class="bi bi-pencil-square "></i>
                     </button>
                     <button mat-raised-button color="primary" class="btn" (click)="toggleFlip()">
                         <i class="bi bi-check-square-fill "></i>
                     </button>
                 </div>
-                <span>spec:</span><input type="text" placeholder="texttext">
+                <div>
+                    <mat-form-field class="mats-form-field" appearance="fill">
+                        <mat-label>Status</mat-label>
+                        <input matInput autocomplete="off" [disabled]="editableBack">
+                    </mat-form-field>
+                </div>
             </div>
         </div>
     </div>

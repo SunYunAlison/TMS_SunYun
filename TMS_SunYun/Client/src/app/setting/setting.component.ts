@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { trigger,state, style,transition,animate } from "@angular/animations";
+import { PopAlertService } from "../services/pop-alert.service";
 import { FreezerData } from "./model";
 import { FREEZERDATA } from "./mock-data";
 
@@ -25,7 +26,10 @@ export class SettingComponent implements OnInit {
 
   @Input()boxData: FreezerData = FREEZERDATA;
 
-  constructor() { }
+  editable:boolean = true;
+  editableBack:boolean = true;
+
+  constructor(private popupService: PopAlertService) { }
 
   ngOnInit() {
   }
@@ -33,6 +37,11 @@ export class SettingComponent implements OnInit {
   flip:string = 'inactive';
   toggleFlip(){
     this.flip = (this.flip == 'inactive')? 'active' : 'inactive';
+  }
+
+  boxFrontSubmit( freezerName: string){
+    let msg = "Freezer " + freezerName + " specification submitted successfully!"
+    this.popupService.setSuccessMsg(msg);
   }
 
 }

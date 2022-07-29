@@ -1,0 +1,30 @@
+.popupbox {
+    width: 100%;
+    height: 100%;
+}
+
+.mats-form-field {
+    width: 100%;
+}
+
+.mats-crud-header {
+    padding-left: 10px;
+    color: #004e66;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.mats-form-button {
+    width: 30%;
+    height: 80%;
+    font-weight: 600 !important;
+    margin-left: 1rem !important;
+    float: center;
+}
+
+::ng-deep.mat-input-element:disabled
+{ 
+color:rgba(0,0,0,0.9);
+} 
+

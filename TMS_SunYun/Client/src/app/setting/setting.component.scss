@@ -4,6 +4,7 @@
 
 .box {
     position: relative;
+    display: block;
     width:300px;
     height:240px;
     margin: auto auto;
@@ -30,16 +31,13 @@
 }
 
 .box-back {
-    background-color: #014a6f;
+    background-color: darkgrey;
     transform: rotateY(-180deg);
 }
 
 .btn-right {
-    text-align: right;
-    border: none;
-    float: right;
+    border: none; 
     background-color: rgba(255, 255, 255, 0);
-  
 }
 
 .icon {  

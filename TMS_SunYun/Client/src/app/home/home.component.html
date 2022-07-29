@@ -1,46 +1,59 @@
 <app-header></app-header>
+
 <body>
     <section class="margin-auto pd-100">
         <div class="row">
-            <div class="col-lg-3 col-md-12 pd-b-20">
-                <mat-card [routerLink]="['/dashboard']">
-                    <div style="text-align: center;">
-                        <i class="bi bi-thermometer-snow icon"></i>
-                    </div>
-                    <mat-card-content style="text-align: center;">
-                        <span class="icon-text">Dashboard</span>
-                    </mat-card-content>
-                </mat-card>
-            </div>
-            <div class="col-lg-3 col-md-12 pd-b-20">
-                <mat-card [routerLink]="['/report']">
-                    <div style="text-align: center;">
-                        <i class="bi bi-clipboard-data icon"></i>
-                    </div>
-                    <mat-card-content style="text-align: center;">
-                        <span class="icon-text">Report</span>
-                    </mat-card-content>
-                </mat-card>
-            </div>
-            <div class="col-lg-3 col-md-12 pd-b-20">
-                <mat-card [routerLink]="['/setting']">
-                    <div style="text-align: center;">
-                        <i class="bi bi-gear-wide-connected icon"></i>
-                    </div>
-                    <mat-card-content style="text-align: center;">
-                        <span class="icon-text">Settings</span>
-                    </mat-card-content>
-                </mat-card>
-            </div>
-            <div class="col-lg-3 col-md-12 pd-b-20">
-                <mat-card [routerLink]="['/cmc']">
-                    <div style="text-align: center;">
-                            <img src="../../assets/images/CMC_logo.png" alt="Link to CMC Application" >
-                    </div>
-                    <mat-card-content style="text-align: center;">
-                        <span class="icon-text">CMC</span>
-                    </mat-card-content>
-                </mat-card>
+            <div class="container">
+                <div class="pd-b-20">
+                    <mat-card [routerLink]="['/dashboard']">
+                        <div style="text-align: center;">
+                            <i class="bi bi-thermometer-snow icon"></i>
+                        </div>
+                        <mat-card-content style="text-align: center;">
+                            <span class="icon-text">Dashboard</span>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="pd-b-20">
+                    <mat-card [routerLink]="['/report']">
+                        <div style="text-align: center;">
+                            <i class="bi bi-clipboard-data icon"></i>
+                        </div>
+                        <mat-card-content style="text-align: center;">
+                            <span class="icon-text">Report</span>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="pd-b-20">
+                    <mat-card [routerLink]="['/setting']">
+                        <div style="text-align: center;">
+                            <i class="bi bi-gear-wide-connected icon"></i>
+                        </div>
+                        <mat-card-content style="text-align: center;">
+                            <span class="icon-text">Status Settings</span>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="pd-b-20">
+                    <mat-card [routerLink]="['/cmc']">
+                        <div style="text-align: center;">
+                            <img src="../../assets/images/CMC_logo.png" alt="Link to CMC Application">
+                        </div>
+                        <mat-card-content style="text-align: center;">
+                            <span class="icon-text">CMC</span>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="pd-b-20">
+                    <mat-card [routerLink]="['/alarm']">
+                        <div style="text-align: center;">
+                            <i class="bi bi-chat-square-text icon"></i>
+                        </div>
+                        <mat-card-content style="text-align: center;">
+                            <span class="icon-text">Alarm Comment</span>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
             </div>
         </div>
     </section>

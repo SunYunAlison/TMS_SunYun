@@ -1,0 +1,47 @@
+<ng-container class="popupbox">
+<button mat-icon-button type="button" color="accent" style="float:right;cursor: pointer;" (click)="onCancelClick()">
+    <!-- <i class="fa fa-times" aria-hidden="true"></i> -->
+    <i class="fa-solid fa-rectangle-xmark fa-2x"></i>
+</button>
+<h1 class="mats-crud-header"> Alarm Event:  <span> {{data.ID}}</span></h1>
+
+<div mat-dialog-content  style="text-align: center;">
+    <mat-card class="col-md-12">
+        <mat-card-content style="border: none;">
+            <mat-form-field class="mats-form-field" appearance="outline">
+                <mat-label>Freezer</mat-label>
+                <input matInput [(ngModel)]="data.Freezer" required autocomplete="off" [disabled]="true">
+            </mat-form-field>
+            <mat-form-field class="mats-form-field" appearance="outline">
+                <mat-label>Status</mat-label>
+                <input matInput [(ngModel)]="data.Status" required autocomplete="off" [disabled]="true">
+            </mat-form-field>
+            <mat-form-field class="mats-form-field" appearance="outline">
+                <mat-label>Temperature</mat-label>
+                <input matInput [(ngModel)]="data.Temp" required autocomplete="off" [disabled]="true">
+                <span matSuffix>°C</span>
+            </mat-form-field>
+            <mat-form-field class="mats-form-field" appearance="outline">
+                <mat-label>AlarmTime</mat-label>
+                <input matInput [(ngModel)]="data.AlarmTime" required autocomplete="off" [disabled]="true">
+            </mat-form-field>
+            <mat-form-field class="mats-form-field" appearance="outline">
+                <mat-label>Comment</mat-label>
+                <input matInput [(ngModel)]="data.Comment" required>
+            </mat-form-field>
+            <mat-form-field class="mats-form-field" appearance="outline">
+                <mat-label>User</mat-label>
+                <input matInput [(ngModel)]="data.User" required>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button class="mats-form-button" color="primary" (click)="submitComment()">
+                Submit
+            </button>
+            <button mat-raised-button class="mats-form-button" color="accent" (click)="onCancelClick()">
+                Cancel
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+</ng-container>

@@ -1,6 +1,8 @@
 <app-header></app-header>
 <app-navbar [pageName]="'dashboard'"></app-navbar>
+<div class="d-flex flex-wrap">
 <app-setting class="box-group" *ngFor="let element of freezerSpec" ></app-setting>
+</div>
 
 <!-- <p>dashboard works!</p> -->
 <!-- <div style="margin-top: 10px;" class="container-fluid">

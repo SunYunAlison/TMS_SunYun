@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, OnDestroy, ViewChild, ViewChildren, QueryList  } from '@angular/core';
 import { MatPaginator } from "@angular/material/paginator";
 import { MatTableDataSource } from '@angular/material/table';
 import { Subject } from 'rxjs';
@@ -18,7 +18,7 @@ import { Users } from "./model";
   templateUrl: './cmc.component.html',
   styleUrls: ['./cmc.component.scss']
 })
-export class CmcComponent implements OnInit, OnDestroy {
+export class CmcComponent implements AfterViewInit, OnInit, OnDestroy  {
 
   private readonly destroyed = new Subject<void>();
   private updateSubscription!: Subscription;
@@ -47,16 +47,20 @@ export class CmcComponent implements OnInit, OnDestroy {
   email = new FormControl('');
   contactNo = new FormControl('');
   emailFormat = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-
-  @ViewChild(MatPaginator)
-  paginator!: MatPaginator;
   autoRefresh: any;
+
+  @ViewChildren(MatPaginator) paginator = new QueryList<MatPaginator>();
+
+  ngAfterViewInit(){
+    this.userDataSource.paginator = this.paginator.toArray()[1];
+    this.messsageDataSource.paginator = this.paginator.toArray()[0];
+  }
 
   constructor(private commonDataService: CmcDataService, private environment: AppConfigService, private popupService: PopAlertService) { 
     this.autoRefresh = environment.config.autoRefresh;
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.getMessageData();
     if (this.autoRefresh != "N") {
       let timeInterval = Number(this.autoRefresh) * 60 * 1000;
@@ -78,7 +82,7 @@ export class CmcComponent implements OnInit, OnDestroy {
       if (result.Result == "Success") {
         this.messageList = JSON.parse(result.Data);
         this.messsageDataSource = new MatTableDataSource<Messages>(this.messageList);
-        this.messsageDataSource.paginator = this.paginator;
+        this.messsageDataSource.paginator = this.paginator.toArray()[0];
       }
       else {
         console.log(result.Error);
@@ -95,7 +99,7 @@ export class CmcComponent implements OnInit, OnDestroy {
       if (result.Result == "Success") {
         this.userList = JSON.parse(result.Data);
         this.userDataSource = new MatTableDataSource<Users>(this.userList);
-        this.userDataSource.paginator = this.paginator;
+        this.userDataSource.paginator = this.paginator.toArray()[1];
       }
       else {
         console.log(result.Error);
@@ -137,7 +141,6 @@ export class CmcComponent implements OnInit, OnDestroy {
           this.user.ContactNo = this.contactNo.value;
 
           this.commonDataService.UpdateAccountInfo(this.user).pipe(takeUntil(this.destroyed)).subscribe(res => {
-            console.log(res);
             if ((res as any).Result == "Success") {
               this.result = true;
               this.successMsg = "Successfully updated!"
@@ -233,6 +236,7 @@ export class CmcComponent implements OnInit, OnDestroy {
         if (result.body.Result == "Success") {
           this.clickDelete = true;
           this.successMsg = "Successfully deleted!"
+          this.popupService.setSuccessMsg(this.successMsg);
         }
         else {
           console.log(result.body.Error);
